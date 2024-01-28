@@ -5,7 +5,7 @@ from PIL import Image
 import os
 from src.utils.image import save_uploaded_file
 from src.data.transform import transform_image
-from src.apps.model1 import process_model1
+from src.apps.model1 import process_model1, process_modelFore, process_modelSmile, process_modelPore, process_modelPig
 
 
 def main(input_image: np.ndarray):
@@ -18,10 +18,18 @@ def main(input_image: np.ndarray):
 
     print(tensor_image.shape)
 
-    out1 = process_model1(tensor_image)
+    # outEye = process_model1(tensor_image)
+    # outFore = process_modelFore(tensor_image)
+    # outSmile = process_modelSmile(tensor_image)
+    outPig = process_modelPig(tensor_image)
+    # outPore = process_modelPore(tensor_image)
 
     result = {
-        'model1': out1
+        # 'Wrinkle Eye': outEye,
+        # 'Wrinkle Fore': outFore,
+        # 'Wrinkle Smiline': outSmile,
+        'Pigmentation': outPig,
+        # 'Pore': outPore
     }
 
     return result
