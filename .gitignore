@@ -308,3 +308,5 @@ runs/
 wandb/
 uploads/
 flagged/
+
+*.pt
