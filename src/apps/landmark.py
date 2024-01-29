@@ -8,6 +8,7 @@ detector = dlib.get_frontal_face_detector()
 path_landmarks = "models/shape_predictor_81_face_landmarks.dat"
 predictor = dlib.shape_predictor(path_landmarks)
 
+
 def M2(pointA, pointB):
     a = round((pointA[0] + pointB[0])/2)
     b = round((pointA[1] + pointB[1])/2)
@@ -18,7 +19,8 @@ def M3(pointA, pointB, pointC):
     b = round((pointA[1]+pointB[1]+pointC[1]/3))
     return np.array((a, b))
 
-def cropFore(image, dets):
+def cropFore(image):
+    dets = detector(image, 0)
     forehead = []
     for k, d in enumerate(dets):
         shape = predictor(image, d)
@@ -51,7 +53,8 @@ def cropFore(image, dets):
         result = cv2.bitwise_and(image, mask)
     return result
 
-def cropEye(image, dets):
+def cropEye(image):
+    dets = detector(image, 0)
     eye = []
     for k, d in enumerate(dets):
         shape = predictor(image, d)
@@ -85,7 +88,8 @@ def cropEye(image, dets):
         result = cv2.bitwise_and(image, mask)
     return result
 
-def cropSmile(image, dets):
+def cropSmile(image):
+    dets = detector(image, 0)
     smileline = []
     if dets is not None:
       for k, d in enumerate(dets):
