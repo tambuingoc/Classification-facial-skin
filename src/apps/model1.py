@@ -21,6 +21,17 @@ def process_model1(image):
 
     return class_names[output.argmax()]
 
+def process_modelEye(image):
+    #create model
+    model = create_resnet_model(num_classes=3, device=config.device)
+    #load moel forehead best
+    load_model(model, config.modelEye_path)
+    model.eval()
+    output = model(image)
+    class_names = ['cAverage', 'cFair', 'cGood']
+    
+    return class_names[output.argmax()]
+
 def process_modelFore(image):
     #create model
     model = create_resnet_model(num_classes=3, device=config.device)
