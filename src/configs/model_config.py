@@ -17,12 +17,12 @@ class ModelConfig:
         
         # Model 1 config
         # self.model1_path = "models/model1.pt"
-        # self.modelFore_path = "models/ForeGAN_32R.pt"
-        # self.modelSmile_path = "models/Smile85Gan_32R.pt"
-        #self.modelEye_path = "models/Eye85Gan_32R.pt"
-        self.modelPig_path = "models/last_model.pt"
-        # self.modelPore_path = "models/best_model_Pore65Res.pt"
-        # self.modelPig_path = "models/piggan69_32R.pt"
+        self.modelFore_path = "models/ForeGAN_32R.pt"
+        self.modelSmile_path = "models/Smile85Gan_32R.pt"
+        self.modelEye_path = "models/Eye85Gan_32R.pt"
+        # self.modelPig_path = "models/last_model.pt"
+        self.modelPore_path = "models/best_model_Pore65Res.pt"
+        self.modelPig_path = "models/piggan69_32R.pt"
 
     def get_config(self):
         return self

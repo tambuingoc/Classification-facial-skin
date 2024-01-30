@@ -79,9 +79,10 @@ def cropEye(image):
             eye.append(M3(landmarks[29], landmarks[39], landmarks[42]).tolist())
             eye.append(M2(landmarks[1], landmarks[30]).tolist())
             eye = np.array(eye)
+            mask = np.zeros_like(image)
         except:
             pass
-        mask = np.zeros(image)
+        
         
         cv2.drawContours(mask, [eye], -1, (255, 255, 255), -1, cv2.LINE_AA)
 
