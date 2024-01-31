@@ -1,6 +1,7 @@
 from src.models.yoloFace import create_face_model
 from src.configs.model_config import config
 import cv2
+from PIL import Image
 
 
 def process_crop_face(image):
@@ -17,8 +18,8 @@ def process_crop_face(image):
 
     for box in boxes:
         [x, y, w, h] = box
-        face_crop = image[y:y+h, x:x+w]
-        cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        face_crop = image[x:x+w, y:y+h]
+        cv2.rectangle(image, (x, y), (w, h), (0, 255, 0), 2)
         break
 
     return image, face_crop

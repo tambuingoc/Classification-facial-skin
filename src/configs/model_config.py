@@ -21,8 +21,8 @@ class ModelConfig:
         self.modelSmile_path = "models/Smile85Gan_32R.pt"
         self.modelEye_path = "models/Eye85Gan_32R.pt"
         # self.modelPig_path = "models/last_model.pt"
-        self.modelPore_path = "models/best_model_Pore65Res.pt"
-        self.modelPig_path = "models/piggan69_32R.pt"
+        self.modelPore_path = "models/best_model_PoreRes.pt"
+        self.modelPig_path = "models/PigGANR.pt"
 
     def get_config(self):
         return self

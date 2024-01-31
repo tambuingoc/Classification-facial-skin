@@ -45,9 +45,9 @@ def main(input_image: np.ndarray):
         
     # convert input_image to tensor
     tensor_image = transform_image(pil_image).unsqueeze(0)
-    fore_tensor = transform_image(foreCrop).unsqueeze(0)
-    eye_tensor = transform_image(eyeCrop).unsqueeze(0)
-    smile_tensor = transform_image(smileCrop).unsqueeze(0)
+    fore_tensor = transform_image(foreCropImage).unsqueeze(0)
+    eye_tensor = transform_image(eyeCropImage).unsqueeze(0)
+    smile_tensor = transform_image(smileCropImage).unsqueeze(0)
 
     # print(tensor_image.shape)
 

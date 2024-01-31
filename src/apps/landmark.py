@@ -16,7 +16,7 @@ def M2(pointA, pointB):
 
 def M3(pointA, pointB, pointC):
     a = round((pointA[0]+pointB[0]+pointC[0])/3)
-    b = round((pointA[1]+pointB[1]+pointC[1]/3))
+    b = round((pointA[1]+pointB[1]+pointC[1])/3)
     return np.array((a, b))
 
 def cropFore(image):

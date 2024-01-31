@@ -55,7 +55,7 @@ def process_modelSmile(image):
     return class_names[output.argmax()]
 
 def process_modelPig(image):
-    model = create_mobile_model(num_classes=3, device=config.device)
+    model = create_resnet_model(num_classes=3, device=config.device)
     load_model(model, config.modelPig_path)
     model.eval()
     output = model(image)
@@ -63,7 +63,7 @@ def process_modelPig(image):
     return class_names[output.argmax()]
 
 def process_modelPore(image):
-    model = create_mobile_model(num_classes=3, device=config.device)
+    model = create_resnet_model(num_classes=3, device=config.device)
     load_model(model, config.modelPore_path)
     model.eval()
     output = model(image)
