@@ -18,7 +18,8 @@ def process_crop_face(image):
 
     for box in boxes:
         [x, y, w, h] = box
-        face_crop = image[x:x+w, y:y+h]
+        face_crop = image[y:h, x:w]  # Corrected slicing
+
         cv2.rectangle(image, (x, y), (w, h), (0, 255, 0), 2)
         break
 
