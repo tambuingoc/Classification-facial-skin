@@ -42,7 +42,7 @@ def main(input_image: np.ndarray):
     except Exception as e:
         print(f"Error cropping smile: {e}")
         smileCropImage = img
-        
+
     # convert input_image to tensor
     tensor_image = transform_image(pil_image).unsqueeze(0)
     fore_tensor = transform_image(foreCropImage).unsqueeze(0)
@@ -57,7 +57,7 @@ def main(input_image: np.ndarray):
     outPig = process_modelPig(tensor_image)
     outPore = process_modelPore(tensor_image)
 
-    result = {
+    results = {
         'Wrinkle Eye': outEye,
         'Wrinkle Fore': outFore,
         'Wrinkle Smiline': outSmile,
@@ -65,6 +65,11 @@ def main(input_image: np.ndarray):
         'Pore': outPore
     }
 
-    return [img, face_crop, foreCropImage, eyeCropImage, smileCropImage, result]
-    
-    
+    # Process the input image and generate classification results
+
+    # Convert results to a markdown table
+    markdown_table = "| Key | Value |\n| --- | --- |\n"
+    for key, value in results.items():
+        markdown_table += f"| {key} | {value} |\n"
+
+    return (img, face_crop, foreCropImage, eyeCropImage, smileCropImage, markdown_table)
